@@ -1,9 +1,10 @@
-const formularioLogin = document.querySelector("form");
+document.addEventListener('DOMContentLoaded', function(){
+    
+    const formularioLogin = document.querySelector("form");
+    const Input_name = document.querySelector(".name");
+    const Input_password = document.querySelector(".password");
 
-const Input_name = document.querySelector(".name");
-const Input_password = document.querySelector(".password");
-
-const url = "http://localhost:8080/login";
+    const url = "http://localhost:8080/login";
 
 /*const data = {
     name_user: Input_name.value,
@@ -27,14 +28,18 @@ function login(){
     })
     .then(function (response) {
         if (response.ok){
-            window.location.href = 'http://127.0.0.1:5500/UserPage/userpage_index.html'
-        }
-        else{
-            console.log('Houve uma falha no login!')
+            window.location.href = `http://127.0.0.1:5500/UserPage/userpage_index.html?username=${Input_name.value}`
+            return response.json();
+        }else{
+            //console.log('Houve uma falha no login!')
+            throw new Error('Houve uma falha no login!');
         }
     })
+    .then(function (userData){
+        //window.location.href = `http://127.0.0.1:5500/UserPage/userpage_index.html?username=${userData.username}`;
+    })
     .catch(function (error) {
-        console.log('Houve um erro', error)
+        console.log('Houve um erro', error);
     })
 };
 
@@ -50,4 +55,7 @@ formularioLogin.addEventListener('submit', function(event){
 
     login();
     //clear();
+})
+
+
 })

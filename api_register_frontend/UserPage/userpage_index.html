@@ -4,8 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuario</title>
+    <script type="module" src="/UserPage/userpage_script.js" defer></script>
+    <script src="/UserPage/deposit.js" defer></script>
+    <script src="/UserPage/transfer.js" defer></script>
+    <script type="module" src="/LoginPage/loginpage_script.js" defer></script>
 </head>
 <body>
-    <h1>Parabéns, Você está logado!!</h1>
+    <div class="box">
+        <p>Nome de usuario: <span id="username"></span></p>
+        <p>Saldo: <span id="amount"></span></p>
+        <p>Número da conta: <span id="accountNumber"></span></p>
+
+        <form id="transferForm">
+            <span>transferir dinheiro</span>
+            <input type="text" class="transfer" name="" id="getTransferQuantity" placeholder="insira a quantia">
+            <p></p>
+            <span>numero da conta</span>
+            <input type="text" class="transferAccountNumber" name="" id="getTransferAccountNumber" placeholder="nº da conta de transferência">
+            <button type="submit">transferir</button>
+            <p></p>
+        </form>
+
+        <form id="depositForm">
+            <span>depositar dinheiro</span>
+            <input type="text" class="deposit" name="deposit" id="getDeposit" placeholder="insira o deposito">
+            <input type="text" class="accountNumber" name="" id="getAccount" placeholder="insira a conta">
+            <button type="submit">depositar</button>
+        </form>
+    </div>
 </body>
 </html>

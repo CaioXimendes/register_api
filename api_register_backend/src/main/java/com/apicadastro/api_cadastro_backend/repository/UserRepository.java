@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     User findByUsername(String user_name);
+    User findByAccountNumber(int accountNumber);
+
+    //User setAmount(double amount);
 }

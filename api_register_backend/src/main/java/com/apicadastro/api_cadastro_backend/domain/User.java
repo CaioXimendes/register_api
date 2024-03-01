@@ -22,4 +22,7 @@ public class User {
     private String phone_number;
     private double amount;
     private int accountNumber;
+    private int receiverAccountNumber;
+    private double transferQuantity;
+    private double depositQuantity;
 }
